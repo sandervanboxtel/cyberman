@@ -16,7 +16,7 @@ public class GameLevel extends DynamicScene {
 
     @Override
     public void setupEntities() {
-        addEntity(new CyberCar("sprites/ship-01.png", new Coordinate2D(350, 350), Direction.RIGHT, new Size(125, 76)));
-        addEntity(new CyberCar("sprites/ship-02.png", new Coordinate2D(350, 350), Direction.LEFT, new Size(125, 76)));
+        addEntity(new CyberCar("sprites/ship-01.png", new Coordinate2D(350, 350), Direction.LEFT, new Size(125, 76)));
+        addEntity(new CyberCar("sprites/ship-02.png", new Coordinate2D(350, 350), Direction.RIGHT, new Size(125, 76)));
     }
 }
