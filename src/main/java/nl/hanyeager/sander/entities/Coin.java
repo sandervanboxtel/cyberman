@@ -26,10 +26,10 @@ public class Coin extends DynamicSpriteEntity implements SceneBorderCrossingWatc
     public void notifyBoundaryCrossing(SceneBorder sceneBorder) {
         switch (direction) {
             case LEFT -> setAnchorLocationX(getSceneWidth());
-            case RIGHT -> setAnchorLocationX(-size.width());
+            case RIGHT -> setAnchorLocationX(-size.width() + 25.0); // Quick fix for cars not displaying on screen after crossing boundary
         }
+
         setAnchorLocationY(new Random().nextInt((int) getSceneHeight()- (int)size.height()));
-        //System.out.println(new Random().nextInt((int) getSceneHeight()- (int)size.height()));
     }
 
     @Override

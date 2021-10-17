@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.entities.YaegerEntity;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
+import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -13,7 +14,7 @@ import nl.hanyeager.sander.Cyberman;
 import nl.hanyeager.sander.entities.ParallaxBackground;
 import nl.hanyeager.sander.entities.buttons.StartButton;
 
-public class TitleScene extends StaticScene {
+public class TitleScene extends DynamicScene {
     private Cyberman cyberman;
 
     public TitleScene(Cyberman cyberman){
