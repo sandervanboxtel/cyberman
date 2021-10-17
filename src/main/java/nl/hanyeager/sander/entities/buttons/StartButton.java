@@ -14,6 +14,7 @@ import nl.hanyeager.sander.Cyberman;
 
 public class StartButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener {
     private Cyberman cyberman;
+
     public StartButton(Cyberman cyberman, Coordinate2D initialLocation){
         super(initialLocation,"Play");
         setFill(Color.WHITESMOKE);
@@ -34,7 +35,7 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
 
     @Override
     public void onMouseExited() {
-        setFill(Color.PURPLE);
+        setFill(Color.WHITESMOKE);
         setCursor(Cursor.DEFAULT);
     }
 }
