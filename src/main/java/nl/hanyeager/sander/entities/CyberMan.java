@@ -12,12 +12,13 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import nl.hanyeager.sander.Cyberman;
+import nl.hanyeager.sander.entities.cybercar.CyberCar;
 import nl.hanyeager.sander.entities.text.HealthText;
 
 import java.util.Random;
 import java.util.Set;
 
-public class CyberMan extends DynamicSpriteEntity implements KeyListener, SceneBorderCrossingWatcher, Newtonian, Collided, Collider {
+public class CyberMan extends DynamicSpriteEntity implements KeyListener, SceneBorderCrossingWatcher, Newtonian, Collider, Collided {
     private Cyberman cyberman;
     private HealthText healthText;
     private int health = 3;
@@ -26,7 +27,7 @@ public class CyberMan extends DynamicSpriteEntity implements KeyListener, SceneB
         super("sprites/cyberman.png", location, new Size(150,80),  1, 1);
         setAnchorPoint(AnchorPoint.CENTER_CENTER);
         //Add gravity to CyberMan
-        setGravityConstant(0.005);
+        setGravityConstant(0.01);
         setFrictionConstant(0.04);
         this.cyberman = cyberman;
         //Set the HealthText
@@ -65,19 +66,18 @@ public class CyberMan extends DynamicSpriteEntity implements KeyListener, SceneB
 
     @Override
     public void onCollision(Collider collider) {
-        setAnchorLocation(
-            new Coordinate2D(new Random().nextInt((int)(getSceneWidth()
-            - getWidth())),
-            new Random().nextInt((int)(getSceneHeight() - getHeight())))
-        );
-        //Substract the health by 1 each time there is a collision
-        health--;
-        healthText.setHealthText(health);
+        if (collider.getClass().isAssignableFrom(CyberCar.class)) {
+            setAnchorLocation(
+                    new Coordinate2D(350, new Random().nextInt((int)(getSceneHeight() - getHeight())))
+            );
 
-        if (health == 0) {
-            cyberman.setActiveScene(2);
+            //Substract the health by 1 each time there is a collision
+            health--;
+            healthText.setHealthText(health);
+
+            if (health == 0) {
+                cyberman.setActiveScene(2);
+            }
         }
-
-        //System.out.println("Collision!");
     }
 }

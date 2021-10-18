@@ -1,5 +1,6 @@
 package nl.hanyeager.sander.entities;
 
+import nl.hanyeager.sander.scenes.GameLevel;
 import nl.hanyeager.sander.scenes.TitleScene;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;

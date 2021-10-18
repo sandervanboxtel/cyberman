@@ -9,8 +9,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.hanyeager.sander.Cyberman;
 import nl.hanyeager.sander.entities.buttons.PlayAgainButton;
-import nl.hanyeager.sander.entities.buttons.QuitGameButton;
-import nl.hanyeager.sander.entities.buttons.StartButton;
+import nl.hanyeager.sander.entities.buttons.TitleSceneButton;
 
 public class GameOver extends StaticScene {
     private Cyberman cyberman;
@@ -40,8 +39,8 @@ public class GameOver extends StaticScene {
         PlayAgainButton playAgainButton = new PlayAgainButton(cyberman, new Coordinate2D(350, 350 ));
         addEntity(playAgainButton);
 
-        //Add QuitGameButton
-        QuitGameButton quitGameButton = new QuitGameButton(cyberman, new Coordinate2D(350, 450 ));
-        addEntity(quitGameButton);
+        //Add TitleSceneButton
+        TitleSceneButton titleSceneButton = new TitleSceneButton(cyberman, new Coordinate2D(350, 450 ));
+        addEntity(titleSceneButton);
     }
 }

@@ -2,6 +2,7 @@ package nl.hanyeager.sander;
 
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
+import nl.hanyeager.sander.scenes.CreditsScene;
 import nl.hanyeager.sander.scenes.GameLevel;
 import nl.hanyeager.sander.scenes.GameOver;
 import nl.hanyeager.sander.scenes.TitleScene;
@@ -23,5 +24,6 @@ public class Cyberman extends YaegerGame {
         addScene(0, new TitleScene(this));
         addScene(1, new GameLevel(this));
         addScene(2, new GameOver(this));
+        addScene(3, new CreditsScene(this));
     }
 }
