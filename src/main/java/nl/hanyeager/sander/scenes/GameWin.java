@@ -8,12 +8,13 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.hanyeager.sander.Cyberman;
+import nl.hanyeager.sander.entities.buttons.PlayNewLevelButton;
 import nl.hanyeager.sander.entities.buttons.TitleSceneButton;
 
-public class CreditsScene extends StaticScene {
+public class GameWin extends StaticScene {
     private Cyberman cyberman;
 
-    public CreditsScene(Cyberman cyberman){
+    public GameWin(Cyberman cyberman){
         this.cyberman = cyberman;
     }
 
@@ -25,21 +26,20 @@ public class CreditsScene extends StaticScene {
 
     @Override
     public void setupEntities() {
-        //TitleScene Text
-        var creditsText = new TextEntity(
+        var gameWinText = new TextEntity(
                 new Coordinate2D(getWidth() / 2, getHeight() / 2),
-                """
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."""
+                "Congratulations You Made It To Level 2!"
         );
-        creditsText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
-        creditsText.setFill(Color.WHITESMOKE);
-        creditsText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 13));
-        addEntity(creditsText);
+        gameWinText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
+        gameWinText.setFill(Color.WHITESMOKE);
+        gameWinText.setFont(Font.font("Roboto", FontWeight.SEMI_BOLD, 30));
+        addEntity(gameWinText);
 
-        //Add TitleSceneButton Game
+        //Add PlayNewLevelButton
+        PlayNewLevelButton playNewLevelButton = new PlayNewLevelButton(cyberman, new Coordinate2D(getWidth() / 2, getHeight() / 2 + 50));
+        addEntity(playNewLevelButton);
+
+        //Add TitleSceneButton
         TitleSceneButton titleSceneButton = new TitleSceneButton(cyberman, new Coordinate2D(getWidth() / 2, getHeight() / 2 + 100));
         addEntity(titleSceneButton);
     }

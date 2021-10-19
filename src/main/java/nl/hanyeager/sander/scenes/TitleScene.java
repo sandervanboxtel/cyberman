@@ -46,15 +46,15 @@ public class TitleScene extends DynamicScene {
         addEntity(cybermanText);
 
         //Add StartButton Game
-        StartButton startButton = new StartButton(cyberman, new Coordinate2D(350, 350 ));
+        StartButton startButton = new StartButton(cyberman, new Coordinate2D(getWidth() / 2, getHeight() / 2 + 85));
         addEntity(startButton);
 
         //Add QuitGameButton Game
-        QuitGameButton quitGameButton = new QuitGameButton(cyberman, new Coordinate2D(350, 450 ));
+        QuitGameButton quitGameButton = new QuitGameButton(cyberman, new Coordinate2D(getWidth() / 2, getHeight() / 2 + 130));
         addEntity(quitGameButton);
 
         //Add CreditsButton Game
-        CreditsButton creditsButton = new CreditsButton(cyberman, new Coordinate2D(650, 13 ));
+        CreditsButton creditsButton = new CreditsButton(cyberman, new Coordinate2D(713, 31));
         addEntity(creditsButton);
     }
 

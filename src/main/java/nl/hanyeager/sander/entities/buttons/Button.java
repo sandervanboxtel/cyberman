@@ -1,5 +1,6 @@
 package nl.hanyeager.sander.entities.buttons;
 
+import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -20,12 +21,13 @@ public class Button extends TextEntity implements MouseButtonPressedListener, Mo
         super(initialLocation);
         setFill(Color.WHITESMOKE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 30));
+        setAnchorPoint(AnchorPoint.CENTER_CENTER);
         this.cyberman = cyberman;
     }
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-
+        //cyberman.setActiveScene();
     }
 
     @Override

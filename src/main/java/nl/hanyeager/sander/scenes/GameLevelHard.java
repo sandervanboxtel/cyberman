@@ -11,15 +11,16 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import nl.hanyeager.sander.Cyberman;
 import nl.hanyeager.sander.entities.coins.Coin;
+import nl.hanyeager.sander.entities.coins.CoinHard;
 import nl.hanyeager.sander.entities.players.CyberMan;
 import nl.hanyeager.sander.entities.cybercar.CyberCar;
 import nl.hanyeager.sander.entities.text.CoinScoreText;
 import nl.hanyeager.sander.entities.text.HealthText;
 
-public class GameLevel extends DynamicScene {
+public class GameLevelHard extends DynamicScene {
     private Cyberman cyberman;
 
-    public GameLevel(Cyberman cyberman){
+    public GameLevelHard(Cyberman cyberman){
         this.cyberman = cyberman;
     }
 
@@ -31,10 +32,10 @@ public class GameLevel extends DynamicScene {
 
     @Override
     public void setupEntities() {
-        //GameLevelText
+        //GameLevelHardText
         var gameLevelText = new TextEntity(
                 new Coordinate2D(getWidth() / 2, 31),
-                "First Level"
+                "Boss Level"
         );
         gameLevelText.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         gameLevelText.setFill(Color.WHITESMOKE);
@@ -44,13 +45,14 @@ public class GameLevel extends DynamicScene {
         //Add the Cyber Cars
         addEntity(new CyberCar("sprites/ship-01.png", new Coordinate2D(550, 350), Direction.RIGHT, new Size(125, 76)));
         addEntity(new CyberCar("sprites/ship-02.png", new Coordinate2D(250, 350), Direction.LEFT, new Size(125, 76)));
+        addEntity(new CyberCar("sprites/ship-03.png", new Coordinate2D(150, 350), Direction.LEFT, new Size(125, 76)));
 
         //Add the CoinScoreText
         CoinScoreText coinScoreText = new CoinScoreText(new Coordinate2D(650, 50));
         addEntity(coinScoreText);
 
         //Add the Coin
-        addEntity(new Coin(cyberman, coinScoreText, "sprites/cybercoin.png", new Coordinate2D(350, 350), Direction.LEFT, new Size(40, 80)));
+        addEntity(new CoinHard(cyberman, coinScoreText, "sprites/cybercoin.png", new Coordinate2D(350, 350), Direction.LEFT, new Size(40, 80)));
 
         //Add the HealthText
         HealthText healthText = new HealthText(new Coordinate2D(650, 13));

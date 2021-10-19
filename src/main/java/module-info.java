@@ -7,4 +7,6 @@ module waterworld {
     opens backgrounds;
     opens sprites;
     exports nl.hanyeager.sander.entities;
+    exports nl.hanyeager.sander.entities.players;
+    exports nl.hanyeager.sander.entities.coins;
 }

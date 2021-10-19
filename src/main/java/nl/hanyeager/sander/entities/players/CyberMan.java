@@ -1,4 +1,4 @@
-package nl.hanyeager.sander.entities;
+package nl.hanyeager.sander.entities.players;
 
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -22,6 +22,7 @@ public class CyberMan extends DynamicSpriteEntity implements KeyListener, SceneB
     private Cyberman cyberman;
     private HealthText healthText;
     private int health = 3;
+    private int totalScore = 0;
 
     public CyberMan(Coordinate2D location, HealthText healthText, Cyberman cyberman){
         super("sprites/cyberman.png", location, new Size(150,80),  1, 1);
@@ -70,10 +71,8 @@ public class CyberMan extends DynamicSpriteEntity implements KeyListener, SceneB
             setAnchorLocation(
                     new Coordinate2D(350, new Random().nextInt((int)(getSceneHeight() - getHeight())))
             );
-
             //Substract the health by 1 each time there is a collision
-            health--;
-            healthText.setHealthText(health);
+            healthText.setHealthText(--health);
 
             if (health == 0) {
                 cyberman.setActiveScene(2);
